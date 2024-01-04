@@ -8,6 +8,10 @@ export default {
     convert: {
       type: Function,
       required: true
+    },
+    favourite: {
+      type: Function,
+      required: true
     }
   }
 }
@@ -16,6 +20,7 @@ export default {
 <template>
   <input min="0" type="number" @input="changeAmount($event.target.value)">
   <button @click="convert()">Конвертировать</button>
+  <button @click="favourite()" className="fav-button">В избранное</button>
 </template>
 
 <style scoped>
@@ -43,5 +48,8 @@ button {
   background: #1a032d;
   border: 0;
   border-radius: 3px;
+}
+button.fav-button {
+  margin-top: 20px;
 }
 </style>
